@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 
 import CodeBlock from './codeBlock';
 import AnchorTag from './anchor';
+import * as scope from '../../../scope';
 
 const StyledPre = styled('pre')`
   padding: 16px;
@@ -74,7 +75,7 @@ export default {
       <pre {...props} />
     </StyledPre>
   ),
-  code: CodeBlock,
+  code: (props) => <CodeBlock scope={scope} {...props} />,
   a: AnchorTag,
   // TODO add `img`
   // TODO add `blockquote`

@@ -27,7 +27,7 @@ const LoadableComponent = Loadable({
 });
 
 /* eslint-disable react/jsx-key */
-const CodeBlock = ({ children: exampleCode, ...props }) => {
+const CodeBlock = ({ children: exampleCode, scope = {}, ...props }) => {
   const [_, updateView] = React.useState(0);
 
   React.useEffect(() => {
@@ -41,7 +41,7 @@ const CodeBlock = ({ children: exampleCode, ...props }) => {
   }, []);
 
   if (props['react-live']) {
-    return <LoadableComponent code={exampleCode} />;
+    return <LoadableComponent code={exampleCode} scope={scope} />;
   } else {
     return (
       <Highlight {...defaultProps} Prism={Prism} code={exampleCode} language={(props.className)?props.className.split("-")[1] :"javascript"} theme={theme}>
