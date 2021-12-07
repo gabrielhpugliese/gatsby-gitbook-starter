@@ -1,3 +1,4 @@
+import './scope/index.scss';
 export const onServiceWorkerUpdateReady = () => {
   const answer = window.confirm(
     `This tutorial has been updated. ` +

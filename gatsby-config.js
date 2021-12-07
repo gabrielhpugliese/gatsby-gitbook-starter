@@ -5,6 +5,7 @@ const plugins = [
   'gatsby-plugin-sitemap',
   'gatsby-plugin-sharp',
   'gatsby-plugin-sass',
+  'gatsby-plugin-postcss',
   {
     resolve: `gatsby-plugin-layout`,
     options: {
